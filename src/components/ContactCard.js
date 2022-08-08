@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import "./ContactCard.css";
 
 const ContactCard = (props) => {
-	const [showAge, setShowAge] = useState(true);
-	const { avatarUrl, name, email, age } = props.contact;
+	const [showAge, setShowAge] = useState(false);
+	const {
+		picture: { large: avatarUrl },
+		name: { first, last },
+		email,
+		dob: { age },
+	} = props.contact;
 
 	const handleClick = () => {
 		setShowAge(() => !showAge);
@@ -12,10 +17,12 @@ const ContactCard = (props) => {
 	return (
 		<div className="contact-card">
 			<div className="card-img">
-				<img src="https://dummyimage.com/150x150/b5b5b5/fff" alt="" />
+				<img src={avatarUrl} alt="" />
 			</div>
 			<div className="card-details">
-				<h1 className="card-name font-md">Name: {name}</h1>
+				<h1 className="card-name font-md">
+					Name: {first} {last}
+				</h1>
 				<span className="card-email font-md">Email: {email}</span>
 				<div className="card-age-details">
 					<button className="card-show-age-btn" onClick={handleClick}>

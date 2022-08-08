@@ -4,11 +4,15 @@ import "./ContactList.css";
 
 const ContactList = (props) => {
 	return (
-		<div className="contact-list">
+		<ul className="contact-list">
 			{props.list.map((contact) => {
-				return <ContactCard contact={contact}></ContactCard>;
+				return (
+					<li key={Math.floor(Math.random() * 1000)}>
+						<ContactCard contact={contact}></ContactCard>
+					</li>
+				);
 			})}
-		</div>
+		</ul>
 	);
 };
 
