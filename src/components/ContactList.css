@@ -1,0 +1,10 @@
+/* In realworld use module.css */
+.contact-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	color: #fff;
+
+	width: 60rem;
+}

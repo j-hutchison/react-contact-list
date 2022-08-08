@@ -1,0 +1,24 @@
+/* CSS RESET */
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+/* */
+
+.App {
+	font-size: 1.8rem;
+
+	display: flex;
+	justify-content: center;
+}
